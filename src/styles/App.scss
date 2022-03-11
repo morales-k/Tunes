@@ -1,0 +1,214 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+$darkblue: #012e40;
+$lightblue: #3ca6a6;
+$cream: #f2e3d5;
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+#radio {
+  @include flexCenter(column);
+  width: 100%;
+  background-color: $darkblue;
+}
+
+#radio h1,
+#radio h2 {
+  margin: 0;
+  padding: 4% 8%;
+  text-align: center;
+  color: #f2f2f2;
+}
+
+#radio h1 {
+  background: #c86639;
+  background: -webkit-linear-gradient(to right, #c86639 0%, #3ca6a6 100%);
+  background: -moz-linear-gradient(to right, #c86639 0%, #3ca6a6 100%);
+  background: linear-gradient(to right, #c86639 0%, #3ca6a6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: underline;
+  font-size: 2.6rem;
+  padding-bottom: 0;
+}
+
+.to-top-btn {
+  @include flexCenter(column);
+  color: $cream;
+  padding: 2%;
+  margin: 1% 0 4% 0;
+  box-shadow: 0 1px 1px $cream;
+  border: 2px solid $cream;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    25deg,
+    rgba(200, 102, 57, 1) 0%,
+    rgba(60, 166, 166, 1) 100%
+  );
+}
+
+.filters {
+  @include flexCenter(row);
+  flex-wrap: wrap;
+  padding: 2%;
+}
+
+.filters button {
+  background-color: transparent;
+  color: #f2f2f2;
+  box-shadow: 1px 1px 2px #ccc;
+  border: 2px solid $lightblue;
+  border-radius: 4px;
+  padding: 4%;
+  margin: 2%;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.stations {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.station {
+  @include flexCenter(column);
+  width: 90%;
+  background-color: #444f51;
+  color: #f2f2f2;
+  padding: 2%;
+  margin: 4%;
+  border: 4px double $cream;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.station-info {
+  @include flexCenter(row);
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.station-info img {
+  width: 80px;
+  height: 80px;
+  margin: 4%;
+}
+
+.station-info p {
+  width: 100%;
+}
+
+.rhap_container.player {
+  width: 100%;
+  background-color: $cream;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.rhap_controls-section {
+  @include flexCenter(row);
+  margin-top: 0 !important;
+}
+
+.rhap_volume-button,
+.rhap_play-pause-button {
+  @include flexCenter(column);
+  width: 40px;
+  height: 40px;
+  font-size: 1.4rem;
+  padding: 0;
+}
+
+.to-top-btn:hover,
+.filters button:hover,
+.rhap_volume-button:hover,
+.rhap_play-pause-button:hover {
+  cursor: pointer;
+}
+
+.rhap_controls-section .rhap_main-controls button[aria-label="Play"] svg path {
+  fill: $darkblue !important;
+}
+
+.rhap_controls-section .rhap_main-controls button[aria-label="Pause"] svg path {
+  fill: $lightblue !important;
+}
+
+.rhap_volume-container .rhap_volume-button {
+  color: $darkblue;
+}
+
+.rhap_volume-bar-area .rhap_volume-bar {
+  background: $lightblue;
+}
+
+.rhap_volume-bar-area .rhap_volume-indicator {
+  background: $darkblue;
+}
+
+.filters .selected {
+  background-image: linear-gradient(
+    25deg,
+    rgba(200, 102, 57, 1) 0%,
+    rgba(60, 166, 166, 1) 100%
+  );
+  border-color: $cream;
+}
+
+@media screen and (min-width: 640px) {
+  .stations {
+    @include flexCenter(row);
+    flex-wrap: wrap;
+  }
+
+  .station {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #radio h1,
+  #radio h2 {
+    padding: 2% 4%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #radio h1,
+  #radio h2 {
+    padding: 1% 2%;
+  }
+
+  .stations {
+    width: 100vw;
+  }
+
+  .station {
+    max-width: 350px;
+    width: 25%;
+    height: 220px;
+    margin: 1%;
+    padding: 1%;
+    justify-content: space-around;
+  }
+
+  .filters button {
+    padding: 3%;
+  }
+
+  .to-top-btn {
+    padding: 0.8%;
+  }
+}
