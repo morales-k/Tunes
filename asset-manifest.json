@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Tunes/static/css/main.bb19bad6.css",
+    "main.js": "/Tunes/static/js/main.9cbb6a02.js",
+    "static/media/radio.png": "/Tunes/static/media/radio.f982923b819928b2053c.png",
+    "index.html": "/Tunes/index.html",
+    "main.bb19bad6.css.map": "/Tunes/static/css/main.bb19bad6.css.map",
+    "main.9cbb6a02.js.map": "/Tunes/static/js/main.9cbb6a02.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb19bad6.css",
+    "static/js/main.9cbb6a02.js"
+  ]
+}
